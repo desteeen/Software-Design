@@ -1,0 +1,76 @@
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
+
+public class Test {
+    public static void main (String [] args){
+        JFrame frame = new JFrame();
+        JLabel nameLabel = new JLabel("Name");
+        JTextField field = new JTextField(20);
+        JButton saveButton = new JButton("Save");
+
+        frame.getContentPane().setLayout(new FlowLayout());
+        frame.add(nameLabel);
+        frame.add(field);
+        frame.add(saveButton);
+        frame.setVisible(true);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+        JPanel panel=new JPanel();
+        panel.setLayout(new FlowLayout());
+        frame.getContentPane().setLayout(new BorderLayout());
+        JTextArea area=new JTextArea();
+        frame.add(panel, BorderLayout.NORTH);
+        frame.add (area, BorderLayout.CENTER);
+
+        panel.add(nameLabel);
+        panel.add(field);
+        panel.add(saveButton);
+        frame.pack();
+
+
+        saveButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String name = field.getText();
+
+                if (name.equals(" ")){
+                    JOptionPane.showMessageDialog(null, "Name is required","Error," ,JOptionPane.ERROR_MESSAGE);
+                } else{
+                    JOptionPane.showMessageDialog(null, name + " has been saved.");
+                    field.setText(" ");
+                }
+
+
+            }
+        });
+        field.addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyPressed(KeyEvent e) {
+                if (e.getKeyCode() == KeyEvent.VK_ENTER){
+                    System.out.println("Enter");
+                    String name = field.getText();
+
+                    if (name.equals(" ")){
+                        JOptionPane.showMessageDialog(null, "Name is required","Error," ,JOptionPane.ERROR_MESSAGE);
+                    } else{
+                        JOptionPane.showMessageDialog(null, name + " has been saved.");
+                        area.append(name +  "\n") ;
+                        field.setText(" ");
+                    }
+
+
+                }
+
+            }
+        });
+
+
+
+
+
+    }
+}
