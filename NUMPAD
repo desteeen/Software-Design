@@ -1,0 +1,122 @@
+import javax.swing.*;
+import java.awt.*;
+
+public class Numpad extends JFrame {
+    public Numpad(){
+        init();
+    }
+
+    private void init(){
+        Container container = this.getContentPane();
+        container.setLayout(new GridBagLayout());
+
+        GridBagConstraints con = new GridBagConstraints();
+
+        JButton button1 = new JButton("num");
+        JButton button2 = new JButton("/");
+        JButton button3 = new JButton("*");
+        JButton button4 = new JButton("-");
+        JButton button5 = new JButton("7");
+        JButton button6 = new JButton("8");
+        JButton button7 = new JButton("9");
+        JButton button8 = new JButton("+");
+        JButton button9 = new JButton("4");
+        JButton button10 = new JButton("5");
+        JButton button11 = new JButton("6");
+        JButton button12 = new JButton("1");
+        JButton button13 = new JButton("2");
+        JButton button14 = new JButton("3");
+        JButton button15 = new JButton("Enter");
+        JButton button16 = new JButton("0");
+        JButton button17 = new JButton(".");
+
+        con.gridx = 0;con.gridy = 0;
+        con.gridwidth = 1; con.gridheight = 1;
+        con.fill = GridBagConstraints.BOTH;
+        container.add(button1, con);
+
+        con.gridx = 1;con.gridy = 0;
+        con.gridwidth = 1; con.gridheight = 1;
+        con.fill = GridBagConstraints.BOTH;
+        container.add(button2, con);
+
+        con.gridx = 2;con.gridy = 0;
+        con.gridwidth = 1; con.gridheight = 1;
+        con.fill = GridBagConstraints.BOTH;
+        container.add(button3, con);
+
+        con.gridx = 3;con.gridy = 0;
+        con.gridwidth = 1; con.gridheight = 1;
+        con.fill = GridBagConstraints.BOTH;
+        container.add(button4, con);
+
+        con.gridx = 0;con.gridy = 1;
+        con.gridwidth = 1; con.gridheight = 1;
+        con.fill = GridBagConstraints.BOTH;
+        container.add(button5, con);
+
+        con.gridx = 1;con.gridy = 1;
+        con.gridwidth = 1; con.gridheight = 1;
+        con.fill = GridBagConstraints.BOTH;
+        container.add(button6, con);
+
+        con.gridx = 2;con.gridy = 1;
+        con.gridwidth = 1; con.gridheight = 1;
+        con.fill = GridBagConstraints.BOTH;
+        container.add(button7, con);
+
+        con.gridx = 3;con.gridy = 1;
+        con.gridwidth = 1; con.gridheight = 2;
+        con.fill = GridBagConstraints.BOTH;
+        container.add(button8, con);
+
+        con.gridx = 0;con.gridy = 2;
+        con.gridwidth = 1; con.gridheight = 1;
+        con.fill = GridBagConstraints.BOTH;
+        container.add(button9, con);
+
+        con.gridx = 1;con.gridy = 2;
+        con.gridwidth = 1; con.gridheight = 1;
+        con.fill = GridBagConstraints.BOTH;
+        container.add(button10, con);
+
+        con.gridx = 2;con.gridy = 2;
+        con.gridwidth = 1; con.gridheight = 1;
+        con.fill = GridBagConstraints.BOTH;
+        container.add(button11, con);
+
+        con.gridx = 0;con.gridy = 3;
+        con.gridwidth = 1; con.gridheight = 1;
+        con.fill = GridBagConstraints.BOTH;
+        container.add(button12, con);
+
+        con.gridx = 1;con.gridy = 3;
+        con.gridwidth = 1; con.gridheight = 1;
+        con.fill = GridBagConstraints.BOTH;
+        container.add(button13, con);
+
+        con.gridx = 2;con.gridy = 3;
+        con.gridwidth = 1; con.gridheight = 1;
+        con.fill = GridBagConstraints.BOTH;
+        container.add(button14, con);
+
+        con.gridx = 3;con.gridy = 3;
+        con.gridwidth = 1; con.gridheight = 2;
+        con.fill = GridBagConstraints.BOTH;
+        container.add(button15, con);
+
+        con.gridx = 0;con.gridy = 4;
+        con.gridwidth = 2; con.gridheight = 1;
+        con.fill = GridBagConstraints.BOTH;
+        container.add(button16, con);
+
+        con.gridx = 2;con.gridy = 4;
+        con.gridwidth = 1; con.gridheight = 1;
+        con.fill = GridBagConstraints.BOTH;
+        container.add(button17, con);
+
+        this.pack();
+        this.setVisible(true);
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    }
+}
