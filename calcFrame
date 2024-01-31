@@ -1,0 +1,60 @@
+//calcButton
+import javax.swing.*;
+import java.awt.*;
+
+public class CalcButton extends JPanel {
+    private String[] calcValues = new String[]{
+            "7", "8", "9", "+",
+            "4", "5", "6", "-",
+            "1", "2", "3", "*",
+            "0", ".", "/", "=",
+    };
+
+    public CalcButton() {
+        xyz();
+    }
+
+    private void xyz() {
+        this.setLayout(new GridLayout(4, 4));
+        for (int i = 0; i < calcValues.length; i++) {
+            this.add(new JButton(calcValues[i]));
+        }
+    }
+}
+
+
+//calcFrame
+import javax.swing.*;
+import java.awt.*;
+
+public class CalcFrame extends JFrame {
+    JTextField field;
+    CalcButton buttons;
+
+    public CalcFrame() {
+        xyz();
+    }
+
+    private void xyz() {
+        field = new JTextField(10);
+        buttons = new CalcButton();
+
+        Container container = this.getContentPane();
+        this.setLayout(new BorderLayout());
+        container.add(field, BorderLayout.NORTH);
+        container.add(buttons, BorderLayout.CENTER);
+
+        this.pack();
+        this.setVisible(true);
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+    }
+}
+
+
+//main
+public class Main {
+    public static void main (String[] args){
+        CalcFrame frame = new CalcFrame();
+    }
+}
